@@ -1,0 +1,36 @@
+body {
+	background: black;
+}
+
+#header {
+	padding: 20px;
+	background: #006600;
+}
+
+#content {
+	background: #660033;
+	padding: 20px;
+}
+
+#footer {
+	background: #660033;
+	padding: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	text-align:center;
+	color:#006600;
+	font-weight: 800;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	text-align:center;
+	height:50px;
+}
+
+li{
+	list-style: none;
+}
+.container{
+	color:black;
+}
