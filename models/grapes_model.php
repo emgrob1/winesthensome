@@ -8,10 +8,11 @@ class Grapes_Model extends Model {
 	
 	function grapesInsert() 
 	{
+		
 		$name = $_POST['name'];
 		$color = $_POST['color'];		
 		$sth = $this->db->prepare('INSERT INTO grapes (color, name) VALUES (:color, :name)');
-		$sth->execute(array(':color' => $color, ':name' => $name, ));
+		$sth->execute(array(':color' => $color, ':name' => $name));
 		
 		$data = array('color' => $color, 'name' => $name, 'id' => $this->db->lastInsertId());
 		echo json_encode($data);
@@ -20,7 +21,7 @@ class Grapes_Model extends Model {
 	
 	function getGrapes()
 	{
-		$sth = $this->db->prepare('SELECT * FROM grapes');
+		$sth = $this->db->prepare('SELECT * FROM grapes Order By name');
 		$sth->setFetchMode(PDO::FETCH_ASSOC);
 		$sth->execute();
 		$data = $sth->fetchAll();

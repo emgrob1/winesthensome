@@ -3,36 +3,29 @@
 class Pairing extends Controller{
 	
 	function __construct(){
-		parent::__construct();
-		Session::init();
-		$logged = Session::get('loggedIn');
-		if ($logged == false) {
-			Session::destroy();
-			header('location: ../login');
-			exit;
-		}
-		$this->view->js = array('pairing/js/pairings.js');
+		parent::__construct();		
+		$this->view->js = array('pairing/js/default.js');
+	}
+
+	function indexAction(){
+  		$list = $this->model->getGrapes();
+	    $data['list'] = $list;
+	    $this->load->view('pairing/index', $data);
+		
+		
 	}
 	
 	function index() {
-		echo 'pairing';
+		$list = $this->model->getGrapes(); 
+		$this->view->list = $list;
+		
+		
 		$this->view->render('pairing/index');
 	}
-	
-	function logout()
-	{
-		Session::destroy();
-		header('location: ../login');
-		exit;
-	}
-	
-	public function pairingList(){
-		$this->model->collect();
-	}
-	
-	public function pairingListDel(){
-		$this->model->delete();
-	}
+
+	function getFood(){
+		$this->model->getFood();
+	}	
 }
 
 ?>

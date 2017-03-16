@@ -1,44 +1,48 @@
 <?php
 
-class Pairings extends Controller{
-	
-		function __construct() {
+class Pairings extends Controller {
+
+	function __construct() {
 		parent::__construct();
 		Session::init();
 		$logged = Session::get('loggedIn');
 		if ($logged == false) {
 			Session::destroy();
 			header('location: ../login');
-			exit;
+			exit ;
 		}
-	
-		$this->view->js = array('pairings/js/default.js');
-		
-	}
-	
-	
-	function index() {
 
-		$this->view->render('pairings/index');
+		$this -> view -> js = array('pairings/js/default.js');
+
 	}
-	
-	function insertPairings(){
-		$this->model->insertPairings();
-		
+
+	function indexAction() {
+		$list = $this -> model -> getGrapes();
+		$data['list'] = $list;
+		$this -> load -> view('grapes/index', $data);
 	}
-	
-	function getPairings(){
-		$this->model->getPairings();
+
+	function index() {
+		$list = $this -> model -> getGrapes();
+		$this -> view -> list = $list;
+		$this -> view -> render('pairings/index');
 	}
-	
-	function deletePairings(){
-		$this->model->deletePairings();
+
+	function insertPairings() {
+		$this -> model -> insertPairings();
+
 	}
-	
-	function clearFields(){
+
+	function getPairings() {
+		$this -> model -> getPairings();
+	}
+
+	function deletePairings() {
+		$this -> model -> deletePairings();
+	}
+
+	function clearFields() {
 		echo 'clear';
 	}
-	
 }
-
 ?>

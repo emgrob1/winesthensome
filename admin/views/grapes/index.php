@@ -10,7 +10,9 @@
 <a href="<?php echo URL;?>display"><button>Display</button></a>
 </p>
 <br />
-<form id="insertGrapes" action="<?php echo URL;?>grapes/insertGrapes/" method="post">
+
+<hr>
+<form id="insertGrapes" action="<?php echo URL;?>grapes/insertGrapes/" method="post" enctype="multipart/form-data">
 	<table class="table table-striped">
 	<tr>
 		<td>
@@ -32,18 +34,19 @@
 	
 	</td>
 		</tr>
-			<tr>
+	<tr>
 			<td>
 		   <label>File: </label>
 		   	</td>
 		   	<td>
-		
-    <img id="preview" src="http://placehold.it/100x100" alt="preview image"  width="75" height="75"/>
+		   		
+			
+    <img id="upload" src="http://placehold.it/100x100" alt="preview image"  width="75" height="75"/>
     <br/>
     <br/>
-     <input type='file' id="inputFile" name="inputFile" />
+     <input type="file" id="inputFile" name="inputFile" />
 		   	</td>
-		</tr>
+		   		</tr>
 		<tr>
 			<td>
 	<input type="submit" value="Save" />
@@ -51,9 +54,8 @@
 	</tr>
 	</table>
 </form>
-<script>
-  
-</script>
+
+
 
 </div>
 </div>

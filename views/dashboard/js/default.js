@@ -25,7 +25,7 @@ $(function() {
 	$('#randomInsert1').submit(function() {
 		var url = $(this).attr('action');
 		var data = $(this).serialize();
-		console.log('data');
+		
 		$.post(url, data, function(o) {
 			$('#listInserts').append('<div>' + o.text + '<a class="del" rel="'+ o.id +'" href="#">X</a></div>');		
 		}, 'json');

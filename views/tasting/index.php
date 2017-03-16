@@ -1,4 +1,3 @@
-<?php include 'header.php';?>
 <div id="information" class="spacer reserve-info ">
 <div class="container">
  <h3>Tasting Wines</h3>
@@ -40,4 +39,3 @@
     </ul>
     </div>
     </div>
-<?php include 'footer.php';?>

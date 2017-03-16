@@ -23,9 +23,10 @@ $(function() {
 	$('#insertPairings').submit(function() {
 		var url = $(this).attr('action');
 		var data = $(this).serialize();
-		console.log(data);
+		
 		$.post(url, data, function(o) {
-			$('#listPairings').append('<div>Grape:' + o.grape + ' Pairs With: '+ o.pairs_with + '<a class="del" rel="'+ o.id +'" href="#">  X</a></div>');			
+			console.log(o);
+			$('#listPairings').append('<div>Grape:' + o.grapes + ' Pairs With: '+ o.pairs_with + '<a class="del" rel="'+ o.id +'" href="#">  X</a></div>');			
 		}, 'json');
 		$('#insertPairings').trigger("reset");
 		

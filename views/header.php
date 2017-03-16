@@ -28,12 +28,23 @@
 
 
 <!-- favicon -->
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
 
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="public/css/default.css">
-
+<link rel="stylesheet" href="public/css/default.css" />
+	<script type="text/javascript" src="public/js/jquery.js"></script>
+	<script type="text/javascript" src="public/js/custom.js"></script>
+<?php
+		if (isset($this->js)) 
+		
+		{
+			foreach ($this->js as $js)
+			{
+				echo '<script type="text/javascript" src="'.URL.'views/'.$js.'"></script>';
+			}
+		}
+	?>
 </head>
 
 <body id="home">

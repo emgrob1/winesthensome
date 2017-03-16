@@ -8,11 +8,14 @@ class Pairings_Model extends Model {
 	
 	function insertPairings() 
 	{
-		$grape = $_POST['grape'];
-		$pairs_with = $_POST['pairs_with'];		 
-		$sth = $this->db->prepare('INSERT INTO pairings (grape, pairs_with) VALUES (:grape	, :pairs_with)');
-		$sth->execute(array(':grape' => $grape, ':pairs_with' => $pairs_with, ));
-		$data = array('grape' => $grape, 'pairs_with' => $pairs_with, 'id' => $this->db->lastInsertId());
+		$grape_id = $_POST['grapes'];
+		
+		$pairs_with = $_POST['pairs_with'];
+			 
+		$sth = $this->db->prepare('INSERT INTO pairings (grapes, pairs_with) VALUES (:grape_id, :pairs_with)');
+		$sth->execute(array(':grape_id' => $grape_id, ':pairs_with' => $pairs_with, ));
+		$data = array('grapes' => $grape_id, 'pairs_with' => $pairs_with, 'id' => $this->db->lastInsertId());
+		
 		echo json_encode($data);
 	}
 	
@@ -33,4 +36,14 @@ class Pairings_Model extends Model {
 	}
 	
 
+	
+	function getGrapes()
+	{
+		
+		$sth = $this->db->prepare('SELECT * FROM grapes');
+		$sth->setFetchMode(PDO::FETCH_ASSOC);
+		$sth->execute();
+		$data = $sth->fetchAll();
+		return $data;
+	}
 }

@@ -1,5 +1,7 @@
 <?php
 
+include 'upload.php';
+
 class Grapes extends Controller{
 	
 		function __construct() {
@@ -13,7 +15,7 @@ class Grapes extends Controller{
 		}
 	
 		$this->view->js = array('grapes/js/default.js');
-		
+	
 	}
 	
 	
