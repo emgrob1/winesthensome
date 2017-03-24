@@ -2,8 +2,10 @@
 Work in Progress (WIP)
 My own experiment with personalized MVC Framework.
 Two sections:
+
 Frontend-displays grapes, pairings, tastings, how wines are made.
-Backend-Updates grapes, pairings.
+
+Backend-(Admin folder) Updates grapes, pairings.
 
 -default.js uses $.getJSON to make a request to controller functions.  
 -Controller functions call the model functions.  
