@@ -39,6 +39,7 @@ class Grapes_Model extends Model {
 		$sth -> setFetchMode(PDO::FETCH_ASSOC);
 		$sth -> execute();
 		$data = $sth -> fetchAll();
+		// encode data for callback
 		echo json_encode($data);
 	}
 
