@@ -1,5 +1,5 @@
 $(function() {
-
+	// getJSON calling the controller function, any data encoded returned in callback function for display as append
 	$.get('grapes/getGrapes', function(o) {
 			
 			$('#listInserts').append('<div class="row"><div class="col-xs-6 col-sm-3">Grapes</div><div class="col-xs-6 col-sm-3">Color</div><div class="col-xs-6 col-sm-3">Actions</div></div>');
